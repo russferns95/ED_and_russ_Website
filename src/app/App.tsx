@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '../assets/vite.svg'
 import heroImg from '../assets/images/hero.png'
+import Footer from '../pages/components/layout/Footer/Footer'
 import '../App.css'
 
 function App() {
@@ -114,6 +115,8 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+
+      <Footer />
     </>
   )
 }
