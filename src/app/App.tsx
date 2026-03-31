@@ -4,7 +4,7 @@ import Navbar from "../pages/components/layout/Navbar/Navbar";
 import Footer from "../pages/components/layout/Footer/Footer";
 
 import Home from "../pages/Home/Homepage";
-import Landing from "../pages/Landing/Landing";
+
 import About from "../pages/About/AboutPage";
 import Contact from "../pages/Contact/Contact";
 import Services from "../pages/Services/Services";
@@ -22,7 +22,7 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
