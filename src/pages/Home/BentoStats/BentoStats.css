@@ -1,0 +1,387 @@
+/* ═══════════════════════════════════════════════════════
+   BENTO STATS SECTION
+   A 3-column bento grid showing key stats and highlights.
+   ─────────────────────────────────────────────────────── */
+
+/* ── Design tokens used in this section ── */
+:root {
+  --bento-dark: #0a1352;          /* deep navy */
+  --bento-dark-alt: #0d1660;      /* slightly lighter navy */
+  --bento-light-bg: #f5f6fb;      /* off-white card background */
+  --bento-white: #ffffff;
+  --bento-accent-purple: #b98af8;
+  --bento-accent-blue: #587ff5;
+  --bento-arrow-bg: #1a2c6e;      /* dark teal/navy for arrow buttons */
+  --bento-radius-card: 22px;
+  --bento-radius-btn: 999px;
+  --bento-radius-arrow: 14px;
+  --bento-gap: 14px;
+}
+
+/* ── Section wrapper — breaks out of the #root max-width to fill the full viewport ── */
+.bento-stats {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 56px 48px 72px;
+  background: #eef0f6;
+  box-sizing: border-box;
+}
+
+/* ══════════════════════════════════════════
+   GRID LAYOUT — mirrors the reference image
+   3 columns: [large-main] [mid (2-row)] [right-promo]
+   ══════════════════════════════════════════ */
+.bento-stats__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1.1fr 0.9fr;
+  grid-template-rows: auto auto;
+  gap: var(--bento-gap);
+  width: 100%;
+  max-width: none;
+}
+
+/* ── Card 1: Main dark card spans 2 rows on the left ── */
+.bento-card--main {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+/* ── Card 2: Light stat top-center ── */
+.bento-card--stat-top {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* ── Card 3: Dark stat bottom-center ── */
+.bento-card--stat-bottom {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* ── Card 4: Promo card spans 2 rows on the right ── */
+.bento-card--promo {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+/* ══════════════════════════════════════════
+   BASE CARD STYLES
+   ══════════════════════════════════════════ */
+.bento-card {
+  position: relative;
+  border-radius: var(--bento-radius-card);
+  overflow: hidden;
+  padding: 28px;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(10, 19, 82, 0.18);
+}
+
+/* Dark card variant */
+.bento-card--dark {
+  background: var(--bento-dark);
+  color: var(--bento-white);
+}
+
+/* Light card variant */
+.bento-card--light {
+  background: var(--bento-white);
+  color: var(--bento-dark);
+}
+
+/* ══════════════════════════════════════════
+   CARD 1 — MAIN (large left card)
+   ══════════════════════════════════════════ */
+.bento-card--main .bento-card__body {
+  position: relative;
+  z-index: 2;
+  max-width: 280px;
+  padding-top: 12px;
+}
+
+/* Heading */
+.bento-card__heading {
+  margin: 0 0 16px;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+  color: var(--bento-white);
+}
+
+/* Description */
+.bento-card__description {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 28px;
+}
+
+.bento-card__description--dark {
+  color: #6f7389;
+}
+
+/* ══════════════════════════════════════════
+   DISCOVER MORE BUTTON
+   ══════════════════════════════════════════ */
+.bento-btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: var(--bento-radius-btn);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Outline variant for dark background */
+.bento-btn--outline {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  color: var(--bento-white);
+}
+
+.bento-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Outline for light background */
+.bento-btn--dark-outline {
+  background: transparent;
+  border: 1.5px solid rgba(10, 19, 82, 0.3);
+  color: var(--bento-dark);
+}
+
+.bento-btn--dark-outline:hover {
+  background: rgba(10, 19, 82, 0.06);
+  border-color: rgba(10, 19, 82, 0.55);
+}
+
+/* ══════════════════════════════════════════
+   ARROW BUTTON (diagonal arrow icon)
+   ══════════════════════════════════════════ */
+.bento-arrow-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--bento-radius-arrow);
+  background: var(--bento-arrow-bg);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bento-white);
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.bento-arrow-btn:hover {
+  background: var(--bento-accent-blue);
+  transform: scale(1.08);
+}
+
+/* Arrow in top-right corner (promo card) */
+.bento-card--promo .bento-arrow-btn {
+  top: 20px;
+  bottom: auto;
+  right: 20px;
+  background: var(--bento-dark);
+}
+
+.bento-arrow-btn--dark {
+  background: var(--bento-dark) !important;
+}
+
+.bento-arrow-btn--dark:hover {
+  background: var(--bento-accent-purple) !important;
+}
+
+/* ══════════════════════════════════════════
+   IMAGE SLOTS — placeholders until you add images
+   ══════════════════════════════════════════ */
+.bento-card__image-slot {
+  position: absolute;
+  overflow: hidden;
+}
+
+/* Main card: image on the right-bottom */
+.bento-card__image-slot--main {
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 55%;
+}
+
+/* Top stat card: image on the top-right */
+.bento-card__image-slot--top-stat {
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 55%;
+}
+
+/* Bottom stat card: image fills the upper portion */
+.bento-card__image-slot--bottom-stat {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+}
+
+.bento-card__image-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Placeholder box (remove once real images are in) */
+.bento-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.bento-image-placeholder--light {
+  background: rgba(10, 19, 82, 0.04);
+  border-color: rgba(10, 19, 82, 0.12);
+  color: rgba(10, 19, 82, 0.3);
+}
+
+/* ══════════════════════════════════════════
+   STAT CARDS — number + label layout
+   ══════════════════════════════════════════ */
+.bento-card__stat-body {
+  position: absolute;
+  bottom: 22px;
+  left: 28px;
+  z-index: 2;
+}
+
+.bento-card__stat-number {
+  display: block;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: var(--bento-dark);
+  margin-bottom: 5px;
+}
+
+.bento-card__stat-number--white {
+  color: var(--bento-white);
+}
+
+.bento-card__stat-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #7a839e;
+  margin: 0;
+}
+
+.bento-card__stat-label--white {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Stat cards need a defined height */
+.bento-card--stat-top,
+.bento-card--stat-bottom {
+  min-height: 210px;
+}
+
+/* ══════════════════════════════════════════
+   CARD 4 — PROMO (right column)
+   ══════════════════════════════════════════ */
+.bento-card--promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bento-card__promo-body {
+  padding-top: 48px; /* clears the arrow button */
+}
+
+.bento-card__promo-heading {
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: var(--bento-dark);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — stack on smaller screens
+   ══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .bento-stats {
+    padding: 40px 24px 56px;
+  }
+
+  .bento-stats__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .bento-card--main {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 320px;
+  }
+
+  .bento-card--stat-top,
+  .bento-card--stat-bottom {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .bento-card--promo {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .bento-stats__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card--main,
+  .bento-card--promo {
+    grid-column: 1;
+  }
+
+  .bento-card__heading,
+  .bento-card__promo-heading {
+    font-size: 22px;
+  }
+
+  .bento-card__stat-number {
+    font-size: 28px;
+  }
+}
