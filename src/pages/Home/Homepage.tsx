@@ -1,6 +1,13 @@
 import "./HomePage.css";
 import BentoStats from "./BentoStats/BentoStats";
 
+const services = [
+  "SEO Services",
+  "Social Media Marketing",
+  "Content Marketing",
+  "Website UI/UX Design",
+];
+
 const Home = () => {
   return (
     <>
@@ -33,6 +40,72 @@ const Home = () => {
       </section>
 
       <BentoStats />
+
+      {/* ── Smart Solutions Section ── */}
+      <section className="smart-solutions">
+
+        {/* Left column: blobs sit behind, heading on top */}
+        <div className="smart-solutions__left">
+          <div className="smart-solutions__blob smart-solutions__blob--top"    aria-hidden="true" />
+          <div className="smart-solutions__blob smart-solutions__blob--bottom" aria-hidden="true" />
+
+          <h2 className="smart-solutions__heading">
+            Delivering{" "}
+            <span className="smart-solutions__heading-accent">
+              smart<br />solutions
+            </span>{" "}tailored<br />
+            to your unique<br />
+            goals.
+          </h2>
+        </div>
+
+        {/* Right column */}
+        <div className="smart-solutions__right">
+          <p className="smart-solutions__para">
+            AI-powered SEO (Search Engine Optimization) offers a bunch of
+            benefits that can save time, boost rankings, and make your digital
+            strategy way more efficient.
+          </p>
+          <p className="smart-solutions__para">
+            Using AI for SEO is super helpful! It can save you time, improve
+            your rankings, and really amp up your online strategy.
+          </p>
+
+          <ul className="smart-solutions__services">
+            {services.map((s, i) => (
+              <li key={s} className="smart-solutions__service-item">
+                <span className="smart-solutions__check" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <defs>
+                      <linearGradient
+                        id={`ss-grad-${i}`}
+                        x1="0" y1="0" x2="20" y2="20"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#b98af8" />
+                        <stop offset="1" stopColor="#7f8cff" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="10" cy="10" r="10" fill={`url(#ss-grad-${i})`} />
+                    <path
+                      d="M6 10.5l3 3 5-5"
+                      stroke="#fff"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                {s}
+              </li>
+            ))}
+          </ul>
+
+          <button className="smart-solutions__cta" type="button">
+            DISCOVER MORE
+          </button>
+        </div>
+      </section>
     </>
   );
 };
