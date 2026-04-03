@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import "./HomePage.css";
 import BentoStats from "./BentoStats/BentoStats";
 
@@ -8,7 +9,48 @@ const services = [
   "Website UI/UX Design",
 ];
 
+const accordionTabs = [
+  {
+    id: "marketing",
+    title: "Marketing",
+    desc: "We specialize in creating, developing, and managing a brand's identity to help businesses stand out in the marketplace and connect with their target audience.",
+    bgClass: "bg-marketing",
+  },
+  {
+    id: "support",
+    title: "Support",
+    desc: "Our support team provides fast and reliable solutions. We ensure your business runs smoothly with 24/7 assistance and technical expertise.",
+    bgClass: "bg-support",
+  },
+  {
+    id: "design",
+    title: "Design",
+    desc: "We craft visually stunning and highly intuitive user interfaces. Our design process guarantees an engaging experience for your audience.",
+    bgClass: "bg-design",
+  },
+];
+
 const Home = () => {
+  const [activeTab, setActiveTab] = useState("marketing");
+  const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMouseEnter = (tabId: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      setActiveTab(tabId);
+    }, 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
       <section className="home-hero">
@@ -104,6 +146,39 @@ const Home = () => {
           <button className="smart-solutions__cta" type="button">
             DISCOVER MORE
           </button>
+        </div>
+      </section>
+
+      {/* ── Services Accordion Section ── */}
+      <section className="accordion-section">
+        <div className="accordion-bg-text">GN SUPPORT MARKE</div>
+        <div className="accordion-container">
+          {accordionTabs.map((tab) => (
+            <div
+              key={tab.id}
+              className={`accordion-item ${
+                activeTab === tab.id ? "expanded" : "collapsed"
+              } ${tab.bgClass}`}
+              onMouseEnter={() => handleMouseEnter(tab.id)}
+            >
+              <div className="accordion-content-box">
+                <h3>{tab.title}</h3>
+                <p>{tab.desc}</p>
+                <button className="accordion-btn" type="button">
+                  DISCOVER MORE
+                </button>
+              </div>
+
+              <div className="accordion-vertical-title">
+                <div className="accordion-vertical-inner">
+                  <span className="accordion-icon">
+                    {activeTab === tab.id ? "✕" : "+"}
+                  </span>
+                  <span className="accordion-text">{tab.title}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>
