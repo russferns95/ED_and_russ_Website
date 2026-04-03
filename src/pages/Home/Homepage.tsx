@@ -30,9 +30,25 @@ const accordionTabs = [
   },
 ];
 
+const quotesTabsData = [
+  "“AI Innovation is revolutionizing industries, redefining our interactions with technology, enhancing efficiency, and opening up new avenues for businesses.”",
+  "“Our marketing strategies leverage cutting-edge analytics to drive unprecedented growth and foster meaningful customer relationships.”",
+  "“We deliver outstanding support and creative solutions that empower brands to reach their full potential and dominate their market position.”"
+];
+
 const Home = () => {
   const [activeTab, setActiveTab] = useState("marketing");
+  const [quoteIndex, setQuoteIndex] = useState(0);
+
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handlePrevQuote = () => {
+    setQuoteIndex((prev) => (prev === 0 ? quotesTabsData.length - 1 : prev - 1));
+  };
+
+  const handleNextQuote = () => {
+    setQuoteIndex((prev) => (prev === quotesTabsData.length - 1 ? 0 : prev + 1));
+  };
 
   const handleMouseEnter = (tabId: string) => {
     if (hoverTimeoutRef.current) {
@@ -179,6 +195,56 @@ const Home = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Stats Quote Section ── */}
+      <section className="stats-quote-section">
+        <div className="stats-quote-container">
+          
+          <div className="quote-card">
+            <div className="quote-icon" aria-hidden="true">
+              <svg width="60" height="50" viewBox="0 0 100 80" fill="none">
+                <path d="M0,40 C0,15, 15,0, 40,0 L40,20 C30,20, 20,30, 20,40 L40,40 L40,80 L0,80 Z M60,40 C60,15, 75,0, 100,0 L100,20 C90,20, 80,30, 80,40 L100,40 L100,80 L60,80 Z" fill="url(#quote-gradient)" />
+                <defs>
+                  <linearGradient id="quote-gradient" x1="0" y1="0" x2="100" y2="80" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#c38ef8"/>
+                    <stop offset="1" stopColor="#858fff"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            
+            <p className="quote-text">{quotesTabsData[quoteIndex]}</p>
+            
+            <div className="quote-controls">
+              <button className="quote-btn" type="button" onClick={handlePrevQuote} aria-label="Previous quote">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <button className="quote-btn" type="button" onClick={handleNextQuote} aria-label="Next quote">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div className="stats-card">
+            <div className="stats-col-left">
+              <h4 className="stats-title">ADS CLICKS</h4>
+              <div className="stats-number">+273%</div>
+            </div>
+            <div className="stats-col-right">
+              <p className="stats-desc">
+                We specialize in creating, developing, and managing a brand's identity to help businesses stand out in the marketplace and connect with their target audience.
+              </p>
+            </div>
+          </div>
+
         </div>
       </section>
     </>

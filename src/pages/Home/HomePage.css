@@ -410,3 +410,143 @@
   letter-spacing: 1px;
 }
 
+/* ════════════════════════════════════════════════
+   Stats Quote Section
+   ════════════════════════════════════════════════ */
+.stats-quote-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: 80px 40px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.stats-quote-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Left Card ── */
+.quote-card {
+  background: #242b58;
+  border-radius: 24px 24px 24px 140px;
+  padding: 60px 40px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 340px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.quote-icon {
+  margin-bottom: 20px;
+}
+
+.quote-icon svg {
+  width: 80px;
+  height: 80px;
+}
+
+.quote-text {
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 500;
+  max-width: 440px;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.quote-controls {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+.quote-btn {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 16px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #242b58;
+  transition: all 0.2s ease;
+}
+
+.quote-btn:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.quote-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Right Card ── */
+.stats-card {
+  background: #f4f5f7;
+  border-radius: 24px;
+  padding: 60px 50px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.stats-col-left {
+  flex: 0 0 auto;
+}
+
+.stats-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #1e2a63;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+}
+
+.stats-number {
+  font-size: 84px;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(90deg, #b98af8 0%, #7f8cff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.stats-col-right {
+  padding-top: 36px;
+}
+
+.stats-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6f7389;
+  margin: 0;
+}
+
+/* Responsive constraints just in case */
+@media (max-width: 900px) {
+  .stats-quote-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .quote-card {
+    border-radius: 24px 24px 24px 80px;
+  }
+}
