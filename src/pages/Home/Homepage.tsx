@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./HomePage.css";
 import BentoStats from "./BentoStats/BentoStats";
+import Section_6 from "./Section_6/Section_6";
 
 const services = [
   "SEO Services",
@@ -104,7 +105,7 @@ const Home = () => {
 
         {/* Left column: blobs sit behind, heading on top */}
         <div className="smart-solutions__left">
-          <div className="smart-solutions__blob smart-solutions__blob--top"    aria-hidden="true" />
+          <div className="smart-solutions__blob smart-solutions__blob--top" aria-hidden="true" />
           <div className="smart-solutions__blob smart-solutions__blob--bottom" aria-hidden="true" />
 
           <h2 className="smart-solutions__heading">
@@ -172,9 +173,8 @@ const Home = () => {
           {accordionTabs.map((tab) => (
             <div
               key={tab.id}
-              className={`accordion-item ${
-                activeTab === tab.id ? "expanded" : "collapsed"
-              } ${tab.bgClass}`}
+              className={`accordion-item ${activeTab === tab.id ? "expanded" : "collapsed"
+                } ${tab.bgClass}`}
               onMouseEnter={() => handleMouseEnter(tab.id)}
             >
               <div className="accordion-content-box">
@@ -201,22 +201,22 @@ const Home = () => {
       {/* ── Stats Quote Section ── */}
       <section className="stats-quote-section">
         <div className="stats-quote-container">
-          
+
           <div className="quote-card">
             <div className="quote-icon" aria-hidden="true">
               <svg width="60" height="50" viewBox="0 0 100 80" fill="none">
                 <path d="M0,40 C0,15, 15,0, 40,0 L40,20 C30,20, 20,30, 20,40 L40,40 L40,80 L0,80 Z M60,40 C60,15, 75,0, 100,0 L100,20 C90,20, 80,30, 80,40 L100,40 L100,80 L60,80 Z" fill="url(#quote-gradient)" />
                 <defs>
                   <linearGradient id="quote-gradient" x1="0" y1="0" x2="100" y2="80" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#c38ef8"/>
-                    <stop offset="1" stopColor="#858fff"/>
+                    <stop stopColor="#c38ef8" />
+                    <stop offset="1" stopColor="#858fff" />
                   </linearGradient>
                 </defs>
               </svg>
             </div>
-            
+
             <p className="quote-text">{quotesTabsData[quoteIndex]}</p>
-            
+
             <div className="quote-controls">
               <button className="quote-btn" type="button" onClick={handlePrevQuote} aria-label="Previous quote">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -247,6 +247,76 @@ const Home = () => {
 
         </div>
       </section>
+
+      <Section_6 />
+
+      <div className="logo-strip-wrapper">
+        <div className="logo-strip">
+          <div className="logo-item">KOBE</div>
+          <div className="logo-item">Proline</div>
+          <div className="logo-item">Cactus</div>
+          <div className="logo-item">Greenish</div>
+          <div className="logo-item">Sitemark</div>
+          <div className="logo-item">luminous</div>
+          <div className="logo-item">Hamilton</div>
+          <div className="logo-item">KOBE</div>
+          <div className="logo-item">Proline</div>
+        </div>
+      </div>
+
+
+      <div className="contact-section">
+        <div className="contact-container">
+
+          {/* LEFT CONTENT */}
+          <div className="contact-left">
+            <h2>
+              We’re here to help <br />
+              with your questions.
+            </h2>
+
+            <div className="contact-info">
+              <div className="info-block">
+                <p className="label">EMAIL ADDRESS</p>
+                <h4>hello@mysite.com</h4>
+              </div>
+
+              <div className="info-block">
+                <p className="label">EMAIL ADDRESS</p>
+                <h4>hello@mysite.com</h4>
+              </div>
+
+              <div className="info-block">
+                <p className="label">PHONE NUMBER</p>
+                <h4>8 800 2345 234</h4>
+              </div>
+
+              <div className="info-block">
+                <p className="label">PHONE NUMBER</p>
+                <h4>
+                  27 Division St, <br />
+                  New York, NY 10002, <br />
+                  United States
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT FORM */}
+          <div className="contact-form">
+            <h3>Get In Touch</h3>
+
+            <form>
+              <input type="text" placeholder="Name*" />
+              <input type="email" placeholder="Email*" />
+              <textarea placeholder="Message*" rows={4}></textarea>
+
+              <button type="submit">SEND MESSAGE</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
     </>
   );
 };
