@@ -1,67 +1,67 @@
-import './Footer.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
-const COMMUNITY_LINKS = [
-  { label: 'Our Product', href: '#' },
-  { label: 'Documentation', href: '#' },
-  { label: 'Our Services', href: '#' },
-  { label: 'Company', href: '#' },
-  { label: 'What we do?', href: '#' },
-] as const
-
-const QUICK_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '#' },
-  { label: 'Services', href: '#' },
-  { label: 'Pricing', href: '#' },
-  { label: 'Our Cases', href: '#' },
-] as const
-
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
-    <footer className="footer" role="contentinfo">
-      <div className="footer__shape footer__shape--tl">
-        <a className="footer__brand" href="/">
-          Ed &amp; Russ
-        </a>
-      </div>
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-content">
+          {/* Company Info */}
+          <div className="footer-section">
+            <h3 className="footer-title">Ed & Russ</h3>
+            <p className="footer-description">
+              We specialize in creating, developing, and managing a brand's identity to help businesses stand out in the marketplace and connect with their target audience.
+            </p>
+            <div className="footer-contact">
+              <p>contact@edandruss.com</p>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
 
-      <div className="footer__main">
-        <nav className="footer__nav" aria-labelledby="footer-community-heading">
-          <h2 id="footer-community-heading" className="footer__heading">
-            Community
-          </h2>
-          <ul className="footer__list">
-            {COMMUNITY_LINKS.map(({ label, href }) => (
-              <li key={label}>
-                <a className="footer__link" href={href}>
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          {/* Quick Links */}
+          <div className="footer-section">
+            <h4 className="footer-heading">Quick Links</h4>
+            <ul className="footer-links">
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </div>
 
-        <nav className="footer__nav" aria-labelledby="footer-quick-heading">
-          <h2 id="footer-quick-heading" className="footer__heading">
-            Quick Links
-          </h2>
-          <ul className="footer__list">
-            {QUICK_LINKS.map(({ label, href }) => (
-              <li key={label}>
-                <a className="footer__link" href={href}>
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+          {/* Services */}
+          <div className="footer-section">
+            <h4 className="footer-heading">Services</h4>
+            <ul className="footer-links">
+              <li><Link to="/services">Web Development</Link></li>
+              <li><Link to="/services">UI/UX Design</Link></li>
+              <li><Link to="/services">Digital Marketing</Link></li>
+              <li><Link to="/services">Consulting</Link></li>
+              <li><Link to="/services">Support</Link></li>
+            </ul>
+          </div>
 
-      <div className="footer__shape footer__shape--br">
-        <p className="footer__copyright">
-          © 2025 — Ed&amp;Russ. All Rights Reserved.
-        </p>
+          {/* Follow Us */}
+          <div className="footer-section">
+            <h4 className="footer-heading">Follow Us</h4>
+            <div className="social-links">
+              <a href="#" className="social-link">Facebook</a>
+              <a href="#" className="social-link">Twitter</a>
+              <a href="#" className="social-link">Instagram</a>
+              <a href="#" className="social-link">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <p>&copy; 2025 Ed & Russ. All Rights Reserved.</p>
+        </div>
       </div>
     </footer>
-  )
-}
+  );
+};
+
+export default Footer;
