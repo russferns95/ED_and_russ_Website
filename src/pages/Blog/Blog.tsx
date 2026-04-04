@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import "./Blog.css";
 
@@ -32,15 +32,15 @@ const BlogPage = () => {
                     <span className="category">TECHNOLOGY</span>
                     <span className="date">MAY 5, 2025</span>
                   </div>
-                <h1>10 Principles Of Effective Web Design</h1>
-                <p className="post-excerpt">
-                  Want to know the one thing that every successful digital marketer does first to ensure they get the biggest return on their marketing budget? It's simple: goal-setting. This is an absolutely essential practice for any digital marketer who knows how to execute their campaigns...
-                </p>
-                <div className="post-footer">
-                  <span className="author">BY KEVIN GARDEN</span>
-                  <a href="BlogPost.tsx" className="read-more">Read More</a>
+                  <h1>10 Principles Of Effective Web Design</h1>
+                  <p className="post-excerpt">
+                    Want to know the one thing that every successful digital marketer does first to ensure they get the biggest return on their marketing budget? It's simple: goal-setting. This is an absolutely essential practice for any digital marketer who knows how to execute their campaigns...
+                  </p>
+                  <div className="post-footer">
+                    <span className="author">BY KEVIN GARDEN</span>
+                    <a href="BlogPost.tsx" className="read-more">Read More</a>
+                  </div>
                 </div>
-              </div>
               </article>
 
               <article className="blog-post">
