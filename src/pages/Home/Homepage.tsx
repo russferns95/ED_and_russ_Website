@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 import BentoStats from "./BentoStats/BentoStats";
 import Section_6 from "./Section_6/Section_6";
@@ -92,9 +93,9 @@ const Home = () => {
             strategy way more efficient.
           </p>
 
-          <button className="home-hero__cta" type="button">
+          <Link to="/services" className="home-hero__cta" role="button">
             ANALYZE YOUR SITE
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -160,9 +161,9 @@ const Home = () => {
             ))}
           </ul>
 
-          <button className="smart-solutions__cta" type="button">
+          <Link to="/about" className="smart-solutions__cta" role="button">
             DISCOVER MORE
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -180,9 +181,9 @@ const Home = () => {
               <div className="accordion-content-box">
                 <h3>{tab.title}</h3>
                 <p>{tab.desc}</p>
-                <button className="accordion-btn" type="button">
+                <Link to="/services" className="accordion-btn" role="button">
                   DISCOVER MORE
-                </button>
+                </Link>
               </div>
 
               <div className="accordion-vertical-title">

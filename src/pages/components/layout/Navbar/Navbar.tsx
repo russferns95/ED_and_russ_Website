@@ -17,7 +17,11 @@ const Navbar: React.FC = () => {
           <li><Link to="/">Home</Link></li>
 
           <li className="dropdown">
-            <Link to="/about">Pages ▾</Link>
+            <span className="dropdown-toggle">Pages ▾</span>
+            <ul className="dropdown-menu">
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/team">Our Team</Link></li>
+            </ul>
           </li>
 
           <li><Link to="/services">Services</Link></li>
