@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcopy C:\\\\Users\\\\Yash\\\\Desktop\\\\Internship_EdandRuss\\\\ED_and_russ_Website\\\\collection:*)",
+      "Bash(cp:*)",
+      "Bash(mkdir -p \"public/assets/images\")",
+      "Bash(cp \"src/assets/images/3d-geometric-abstract-background-removebg-preview 1.png\" \"public/assets/images/\")",
+      "Bash(cp \"src/assets/images/3d-shapes-glowing-with-bright-holographic-colors-removebg-preview 1.png\" \"public/assets/images/\")",
+      "Bash(cp \"src/assets/images/Group 1.png\" \"public/assets/images/\")"
+    ]
+  }
+}

@@ -25,7 +25,7 @@ const BentoStats = () => {
 
           {/* Image placeholder — add your 3D wave/ribbon image here */}
           <div className="bento-card__image-slot bento-card__image-slot--main" aria-hidden="true">
-            {<img src="src\assets\images\3d-geometric-abstract-background-removebg-preview 1.png" alt="" />}
+            {<img src="/assets/images/3d-geometric-abstract-background-removebg-preview 1.png" alt="" />}
             <div className="bento-image-placeholder">
               <span>3D Wave Image</span>
             </div>
@@ -43,7 +43,7 @@ const BentoStats = () => {
         <article className="bento-card bento-card--light bento-card--stat-top">
           {/* Image placeholder — add your 3D crystal/gem image here */}
           <div className="bento-card__image-slot bento-card__image-slot--top-stat" aria-hidden="true">
-            {<img src="src\assets\images\3d-shapes-glowing-with-bright-holographic-colors-removebg-preview 1.png" alt="" />}
+            {<img src="/assets/images/3d-shapes-glowing-with-bright-holographic-colors-removebg-preview 1.png" alt="" />}
             <div className="bento-image-placeholder bento-image-placeholder--light">
               <span>3D Crystal Image</span>
             </div>
@@ -59,7 +59,7 @@ const BentoStats = () => {
         <article className="bento-card bento-card--dark bento-card--stat-bottom">
           {/* Image placeholder — add your 3D sphere image here */}
           <div className="bento-card__image-slot bento-card__image-slot--bottom-stat" aria-hidden="true">
-            {<img src="src\assets\images\Group 1.png" alt="" />}
+            {<img src="/assets/images/Group 1.png" alt="" />}
             <div className="bento-image-placeholder">
               <span>3D Sphere Image</span>
             </div>
