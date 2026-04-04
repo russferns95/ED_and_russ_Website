@@ -655,3 +655,51 @@ footer {
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 480px) {
+  .blog-hero {
+    padding: 48px 16px 40px;
+  }
+
+  .blog-hero h1 {
+    font-size: 34px;
+  }
+
+  .blog-breadcrumb {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .blog-layout {
+    padding: 56px 0;
+    gap: 24px;
+  }
+
+  .post-content,
+  .profile,
+  .recent-posts,
+  .categories,
+  .tags {
+    padding: 20px;
+  }
+
+  .post-meta,
+  .post-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .blog-post.featured h1,
+  .blog-post:not(.featured) h3 {
+    font-size: 20px;
+  }
+
+  .newsletter {
+    padding: 56px 20px;
+  }
+
+  .newsletter h2 {
+    font-size: 30px;
+  }
+}

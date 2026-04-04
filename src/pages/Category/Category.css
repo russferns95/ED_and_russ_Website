@@ -228,3 +228,66 @@
     margin: 30px auto 0;
   }
 }
+
+@media (max-width: 480px) {
+  .category-page {
+    margin-bottom: 64px;
+  }
+
+  .category-hero-section {
+    margin-bottom: 40px;
+    padding: 0 16px;
+  }
+
+  .category-hero-inner {
+    border-radius: 24px;
+    padding: 48px 16px 32px;
+  }
+
+  .category-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .category-breadcrumb {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .category-posts-section {
+    padding: 0 16px;
+  }
+
+  .category-post-image {
+    margin-bottom: 20px;
+  }
+
+  .category-post-image img {
+    min-height: 240px;
+    max-height: 320px;
+    border-radius: 18px;
+  }
+
+  .category-post-content {
+    padding: 0;
+  }
+
+  .category-post-meta {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+
+  .category-post-content h2 {
+    font-size: 22px;
+  }
+
+  .category-post-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .read-more-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

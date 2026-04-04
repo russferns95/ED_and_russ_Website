@@ -824,3 +824,94 @@
     font-size: 28px;
   }
 }
+
+@media (max-width: 480px) {
+  .services-hero {
+    padding: 48px 16px 40px;
+  }
+
+  .services-hero h1 {
+    font-size: 32px;
+  }
+
+  .services-breadcrumb {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .marketing-banner,
+  .service-cards-section,
+  .portfolio-section,
+  .seo-section,
+  .pricing-section,
+  .partners-section,
+  .newsletter-section {
+    margin-bottom: 56px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .marketing-banner-content-card,
+  .service-cards-container,
+  .seo-section-inner,
+  .newsletter-inner {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .marketing-banner-content-card {
+    margin: 16px;
+  }
+
+  .marketing-banner-content-card h2,
+  .seo-left h2,
+  .pricing-section > h2,
+  .newsletter-inner h2 {
+    font-size: 28px;
+  }
+
+  .marquee-section {
+    padding: 24px 0;
+    margin-bottom: 40px;
+  }
+
+  .marquee-track {
+    gap: 30px;
+  }
+
+  .marquee-track span {
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+
+  .portfolio-filter-btn {
+    width: 100%;
+  }
+
+  .pricing-toggle {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pricing-toggle-btn {
+    flex: 1 1 140px;
+  }
+
+  .pricing-card {
+    padding: 28px 22px;
+  }
+
+  .pricing-card-price {
+    font-size: 38px;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+  }
+
+  .scroll-top-btn {
+    right: 16px;
+    bottom: 16px;
+  }
+}

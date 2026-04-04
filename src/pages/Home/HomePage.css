@@ -274,6 +274,10 @@
   flex: 1;
 }
 
+.accordion-item.expanded .accordion-vertical-inner {
+  opacity: 1;
+}
+
 /* Backgrounds */
 .accordion-item.bg-marketing {
   background: linear-gradient(135deg, #d3e2fc 0%, #fbc2eb 100%);
@@ -594,5 +598,280 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    padding: 72px 28px 64px;
+  }
+
+  .home-hero__bg-words {
+    display: none;
+  }
+
+  .home-hero__bg-words span:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .home-hero__title {
+    font-size: 52px;
+  }
+
+  .smart-solutions {
+    grid-template-columns: 1fr;
+  }
+
+  .smart-solutions__left,
+  .smart-solutions__right {
+    padding: 48px 28px;
+  }
+
+  .accordion-section {
+    padding: 120px 24px 72px;
+  }
+
+  .accordion-bg-text {
+    font-size: 82px;
+    top: 32px;
+  }
+
+  .accordion-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    height: auto;
+  }
+
+  .accordion-item {
+    display: block;
+    min-height: 0;
+    border-radius: 28px;
+  }
+
+  .accordion-item.collapsed,
+  .accordion-item.expanded {
+    width: 100%;
+    flex: none;
+  }
+
+  .accordion-content-box {
+    position: relative;
+    inset: auto;
+    width: auto;
+    max-width: none;
+    min-height: 0;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 24px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .accordion-item.expanded .accordion-content-box {
+    max-height: 320px;
+    padding: 0 24px 24px;
+  }
+
+  .accordion-vertical-title {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .accordion-vertical-inner {
+    position: static;
+    transform: none;
+    justify-content: space-between;
+    padding: 22px 24px;
+    font-size: 24px;
+    color: #1e2a63;
+  }
+
+  .accordion-icon {
+    font-size: 30px;
+  }
+
+  .stats-card {
+    flex-direction: column;
+    padding: 40px 32px;
+  }
+
+  .stats-col-right {
+    padding-top: 0;
+  }
+
+  .stats-number {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    padding: 56px 20px;
+  }
+
+  .home-hero__bg-words {
+    top: 104px;
+    font-size: 28px;
+    gap: 14px;
+  }
+
+  .home-hero__title {
+    font-size: 40px;
+    line-height: 1.12;
+  }
+
+  .home-hero__description {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .smart-solutions__left,
+  .smart-solutions__right {
+    padding: 36px 20px;
+  }
+
+  .smart-solutions__heading {
+    font-size: 32px;
+    max-width: 280px;
+  }
+
+  .smart-solutions__blob--top {
+    width: 140px;
+    height: 140px;
+    top: 16px;
+    right: 20px;
+  }
+
+  .smart-solutions__blob--bottom {
+    width: 112px;
+    height: 112px;
+    right: 64px;
+    bottom: 20px;
+  }
+
+  .smart-solutions__services {
+    grid-template-columns: 1fr;
+  }
+
+  .accordion-section {
+    padding: 92px 16px 56px;
+  }
+
+  .accordion-bg-text {
+    font-size: 54px;
+    top: 26px;
+  }
+
+  .accordion-content-box {
+    padding: 0 18px 0;
+  }
+
+  .accordion-content-box h3 {
+    font-size: 24px;
+  }
+
+  .accordion-content-box p {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .accordion-item.expanded .accordion-content-box {
+    max-height: 360px;
+    padding: 0 18px 18px;
+  }
+
+  .accordion-vertical-inner {
+    font-size: 20px;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .accordion-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .quote-card {
+    min-height: 0;
+    padding: 40px 24px 96px;
+    border-radius: 24px 24px 24px 56px;
+  }
+
+  .quote-icon svg {
+    width: 58px;
+    height: 58px;
+  }
+
+  .quote-text {
+    font-size: 20px;
+  }
+
+  .quote-controls {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .quote-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .stats-card {
+    padding: 32px 24px;
+  }
+
+  .stats-number {
+    font-size: 48px;
+  }
+
+  .logo-strip {
+    gap: 18px;
+    padding: 0 16px;
+  }
+
+  .logo-item {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .accordion-section {
+    padding: 76px 12px 48px;
+  }
+
+  .accordion-bg-text {
+    font-size: 40px;
+  }
+
+  .accordion-container {
+    gap: 14px;
+  }
+
+  .accordion-item {
+    border-radius: 22px;
+  }
+
+  .accordion-vertical-inner {
+    font-size: 18px;
+    padding: 16px;
+  }
+
+  .accordion-content-box {
+    padding: 0 16px 0;
+  }
+
+  .accordion-item.expanded .accordion-content-box {
+    max-height: 400px;
+    padding: 0 16px 16px;
   }
 }

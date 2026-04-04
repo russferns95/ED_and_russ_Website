@@ -367,6 +367,10 @@
 }
 
 @media (max-width: 580px) {
+  .bento-stats {
+    padding: 32px 16px 44px;
+  }
+
   .bento-stats__grid {
     grid-template-columns: 1fr;
   }
@@ -376,6 +380,23 @@
     grid-column: 1;
   }
 
+  .bento-card {
+    padding: 22px;
+  }
+
+  .bento-card--main {
+    min-height: 280px;
+  }
+
+  .bento-card--stat-top,
+  .bento-card--stat-bottom {
+    min-height: 180px;
+  }
+
+  .bento-card__body {
+    max-width: 100%;
+  }
+
   .bento-card__heading,
   .bento-card__promo-heading {
     font-size: 22px;
@@ -383,5 +404,14 @@
 
   .bento-card__stat-number {
     font-size: 28px;
+  }
+
+  .bento-card__image-slot--main {
+    width: 54%;
+    height: 42%;
+  }
+
+  .bento-card__promo-body {
+    padding-top: 56px;
   }
 }

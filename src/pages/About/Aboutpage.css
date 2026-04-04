@@ -560,3 +560,49 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .breadcrumb,
+  .hero,
+  .about-section,
+  .join-banner,
+  .team-members {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero {
+    padding: 56px 0;
+  }
+
+  .hero h1,
+  .about-text h2,
+  .join-content h2,
+  .header-left h2 {
+    font-size: 30px;
+  }
+
+  .hero p,
+  .join-content p,
+  .header-left p {
+    font-size: 16px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member {
+    padding: 24px 18px;
+  }
+
+  .btn-view-all,
+  .btn-white {
+    width: 100%;
+    text-align: center;
+  }
+}

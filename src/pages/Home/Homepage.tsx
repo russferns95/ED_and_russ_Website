@@ -60,6 +60,14 @@ const Home = () => {
     }, 150);
   };
 
+  const handleTabActivate = (tabId: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+
+    setActiveTab(tabId);
+  };
+
   useEffect(() => {
     return () => {
       if (hoverTimeoutRef.current) {
@@ -176,6 +184,7 @@ const Home = () => {
               className={`accordion-item ${activeTab === tab.id ? "expanded" : "collapsed"
                 } ${tab.bgClass}`}
               onMouseEnter={() => handleMouseEnter(tab.id)}
+              onClick={() => handleTabActivate(tab.id)}
             >
               <div className="accordion-content-box">
                 <h3>{tab.title}</h3>
