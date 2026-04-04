@@ -263,60 +263,6 @@ const Home = () => {
           <div className="logo-item">Proline</div>
         </div>
       </div>
-
-
-      <div className="contact-section">
-        <div className="contact-container">
-
-          {/* LEFT CONTENT */}
-          <div className="contact-left">
-            <h2>
-              We’re here to help <br />
-              with your questions.
-            </h2>
-
-            <div className="contact-info">
-              <div className="info-block">
-                <p className="label">EMAIL ADDRESS</p>
-                <h4>hello@mysite.com</h4>
-              </div>
-
-              <div className="info-block">
-                <p className="label">EMAIL ADDRESS</p>
-                <h4>hello@mysite.com</h4>
-              </div>
-
-              <div className="info-block">
-                <p className="label">PHONE NUMBER</p>
-                <h4>8 800 2345 234</h4>
-              </div>
-
-              <div className="info-block">
-                <p className="label">PHONE NUMBER</p>
-                <h4>
-                  27 Division St, <br />
-                  New York, NY 10002, <br />
-                  United States
-                </h4>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT FORM */}
-          <div className="contact-form">
-            <h3>Get In Touch</h3>
-
-            <form>
-              <input type="text" placeholder="Name*" />
-              <input type="email" placeholder="Email*" />
-              <textarea placeholder="Message*" rows={4}></textarea>
-
-              <button type="submit">SEND MESSAGE</button>
-            </form>
-          </div>
-
-        </div>
-      </div>
     </>
   );
 };
